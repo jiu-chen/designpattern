@@ -5,13 +5,13 @@ package com.designpattern.factory;
  *
  * 定义一个用于创建对象的接口，让子类决定实例化哪一个类。Factory Method 使得一个类的实例化延迟到子类
  */
-public class FactoryMethod {
+public class FactoryMethodTest {
     public static void main(String[] args) {
-        Application application = new ConcreateProductA();
+        Application application = new ConcreteProductA();
         Product product = application.getObject();
         product.method1();
 
-        Application applicationB = new ConcreateProductB();
+        Application applicationB = new ConcreteProductB();
         Product productB = applicationB.getObject();
         productB.method1();
     }
@@ -51,7 +51,7 @@ abstract class Application{
 }
 
 // 将变化的部分让子类去实现
-class ConcreateProductA extends Application{
+class ConcreteProductA extends Application{
     @Override
     Product createProduct(){
         // ..
@@ -61,7 +61,7 @@ class ConcreateProductA extends Application{
 
 
 // ProductB...
-class ConcreateProductB extends Application{
+class ConcreteProductB extends Application{
     @Override
     Product createProduct(){
         // ..
